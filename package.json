@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write \"**/*.{ts,tsx}\""
+    "format": "prettier --write \"**/*.{ts,tsx}\"",
+    "check-format": "prettier --check \"**/*.{ts,tsx}\"",
+    "prepare": "husky"
   },
   "dependencies": {
     "next": "15.0.3",
@@ -22,6 +24,7 @@
     "eslint": "^8",
     "eslint-config-next": "15.0.3",
     "eslint-config-prettier": "^9.1.0",
+    "husky": "^9.1.6",
     "postcss": "^8",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",

@@ -1,0 +1,24 @@
+#!/bin/sh
+
+. "$(dirname "$0")/_/husky.sh"
+
+# Prettier
+echo "🔍 Checking code formatting"
+if pnpm check-format; then
+  echo "✅ Formatting check passed"
+else
+  echo "⚠️ Formatting issues found"
+  echo "🛠️ Applying fixes"
+  pnpm format
+  echo "✅ Formatting fixed"
+fi
+
+# Build project
+echo "🏗️ Building project"
+if pnpm build; then
+    echo "✅ Build successful!"
+else
+    echo "❌ Build failed"
+fi
+
+echo "🚀 Committing changes"
